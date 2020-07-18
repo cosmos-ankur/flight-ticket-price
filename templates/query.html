@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<title>USER FORM</title>
+	<style type="text/css">
+		h3{
+			color: rgb(255,51,255);
+			margin-top: 25px;
+			size: 50px;
+		}
+		form{
+			
+		}
+		.jumbotron{
+			background-color: rgb(255,128,0);
+			background-image: url('https://i.pinimg.com/originals/ad/af/58/adaf588d53dc032d19c50481d32f60da.gif');
+			background-repeat: no-repeat;
+			margin-right: 60px;
+			margin-left: 60px;
+			margin-top: 30px;
+
+		}
+		h1{
+			margin-left: 510px;
+		}
+		.lead{
+			margin-left: 510px;
+			background-color: rgb(255,204,255);
+		}
+		.body{
+			background-color: rgb(292,292,292)
+		}
+		button{
+			margin-left: 600px;
+		}
+	</style>
+</head>
+<body style="background-color: rgb(292,292,292);">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">OFFERS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">HEY {{ Name }}</h1>
+    <p class="lead">FILL THIS AS PER YOUR REQUIRMENT FOR THE BEST PRICE.</p>
+  </div>
+</div>
+	<form method="POST" action="{{url_for('predict')}}">
+		<h3>Which Airline do You Prefer?</h3><br><select name="Airline" id="Airline"  required="required">
+                <option value="Jet Airways">Jet Airways</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Air India">Air India</option>
+                <option value="Mutiple Carriers">Multiple Carriers</option>
+                <option value="Spicejet">Spicejet</option>
+                <option value="Air Asia">Air Asia</option>
+                <option value="GoAir">Go Air</option>
+                <option value="Multiple Carriers Premium Economy">Multiple Carriers Premium Economy</option>
+                <option value="Jet Airways Business">Jet Airways Business</option>
+                <option value="Vistara Premium Economy">Vistara Premium Economy</option>
+                <option value="Truejet">Truejet</option>
+            </select>
+        <h3>FROM</h3><select name="Source" id="Source" required="required">
+        		<option value="Delhi">Delhi</option>
+        		<option value="Kolkata">Kolkata</option>
+        		<option value="Banglore">Banglore</option>
+        		<option value="Mumbai">Mumbai</option>
+        		<option value="Chennai">Chennai</option>
+        	
+        </select>
+
+        <h3>TO</h3><select name="Destination" id="Destination" required="required">
+        	<option value="Cochin">Cochin</option>
+        	<option value="Banglore">Banglore</option>
+        	<option value="Delhi">Delhi</option>
+        	<option value="New Delhi">New Delhi</option>
+        	<option value="Hyderabad">Hyderabad</option>
+        	<option value="Kolkata">Kolkata</option>
+        	
+        </select>
+		<h3>How many Total Stops You want between Journey</h3><input id="third" name="Total_Stops" required="required">
+
+		<h3>ADDITIONAL INFO</h3><select name="Additional_info" id="Additional_info" required="required">
+			<option value="No info">No info</option>
+			<option value="In-flight meal not included">In-flight meal not included</option>
+			<option value="No check-in baggage included">No check-in baggage included</option>
+			<option value="1 Long layover">1 Long layover</option>
+			<option value="Change airports">Change airports</option>
+			<option value="Business class">Business class</option>
+			<option value="No Info">No Info</option>
+			<option value="Red-eye flight">Red-eye flight</option>
+			<option value="1 Short layover">1 Short layover</option>
+			<option value="2 Long layover">2 Long layover</option>
+
+			
+		</select>
+
+		<h3>DATE OF JOURNEY</h3><input id="fourth" name="Date" required="required">
+		<h3>MONTH OF JOURNEY</h3><input id="fifth" name="Month" required="required">
+		<h3>YEAR OF JOURNEY</h3><input id="sixth" name="Year" required="required">
+
+		<h3>EXPECTED TIME OF DEPARTURE(hour)</h3><input id="seventh" name="dep_hour" required="required">
+		<h3>EXPECTED TIME OF DEPARTUTE(minute)</h3><input id="eight" name="dep_mint" required="required">
+
+		<h3>EXPECTED TIME OF ARRIVAL(hour)</h3><input id="nine" name="arr_hour" required="required">
+		<h3>EXPECTED TIME OF ARRIVAL(minute)</h3><input id="ten" name="arr_mint" required="required">
+
+		<h3>EXPECTED TIME OF JOURNEY(hour)</h3><input id="eleven" name="hour_duration" required="required">
+		<h3>EXPECTED TIME OF JOURNEY(minute)</h3><input id="tweleve" name="mint_duration" required="required">
+
+		<br><br><button id="sub" type="submit " class="btn btn-outline-warning">Calculate the TICKET Price</button>
+            <br>
+
+
+
+
+	</form>
+
+</body>
+</html>
